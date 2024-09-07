@@ -1,0 +1,12 @@
+* {
+	font-family: "JetBrainsMonoNL NF" !important;
+}
+
+.tab > * {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.tab.active > * {
+	color: #000000 !important;
+	background-color: #a6892baa;
+}
+
