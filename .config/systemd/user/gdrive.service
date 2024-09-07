@@ -1,0 +1,10 @@
+[Unit]
+Description=Mount Google drive folder
+
+[Service]
+Type=simple
+ExecStart=/home/astroanax/bin/mount-gdrive.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

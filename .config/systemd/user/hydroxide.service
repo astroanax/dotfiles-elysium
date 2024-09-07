@@ -1,0 +1,10 @@
+[Unit]
+Description=Run hydroxide bridge
+
+[Service]
+Type=simple
+ExecStart=hydroxide serve
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
