@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+source ~/bin/venv/bin/activate
+query=$(echo -n | tofi --width "100%" --require-match=false --prompt-text "Search>")
+if [[ "$query" == "" ]]; then
+	exit 1
+fi
+
+results=$(yt-search --one-line "$query")
+target=$(echo "$results" | tofi --width "100%" --prompt-text "Download> ")
+if [[  "$target" == "" ]]; then
+	exit 2
+fi
+
+target=( $target )
+url="${target[-1]}"
+
+cd ~/Music/Youtube/
+yt-dlp --extract-audio --embed-metadata --merge-output-format mkv "$url" -o "%(artist)s - %(track)s - %(channel)s - %(title)s.%(ext)s"
+action=$(notify-send -A "play" "Downloaded" "$url downloaded")
+if [[ "action" == "play" ]]; then
+	mpc add "$(ls -Art | tail -n 1)"
+	mpc play
+fi

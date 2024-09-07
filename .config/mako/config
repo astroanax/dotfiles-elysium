@@ -1,0 +1,18 @@
+max-history=100
+font=JetBrains Mono
+background-color=#000000aa
+text-color=#aa0000
+border-size=1
+border-color=#a6892b
+progress-color=source #d4af37
+text-alignment=right
+on-button-right=dismiss
+on-button-left=invoke-default-action
+on-button-middle=dismiss-all
+on-touch=dismiss-all
+default-timeout=5000
+
+[urgency=critical]
+text-color=#f7f7f7
+border-color=#aa0000
+background-color=#774b4e33
